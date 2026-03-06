@@ -1,6 +1,6 @@
 # reveal-deck
 
-A Claude Code skill for building production-quality Reveal.js slide decks from markdown outlines. Ships with a named theme, component library, and layout system so you can reference specific pieces by name.
+A Claude Code skill for building production-quality Reveal.js slide decks. Works two ways: from a markdown outline, or from scratch given just a topic. Ships with a named theme, component library, and layout system so you can reference specific pieces by name.
 
 ## Install
 
@@ -11,6 +11,8 @@ A Claude Code skill for building production-quality Reveal.js slide decks from m
 This symlinks the skill into `~/.claude/skills/`. The slash command is `/slides`.
 
 ## Quick start
+
+### Option A — From a markdown outline
 
 ```bash
 mkdir ~/decks/my-talk && cd ~/decks/my-talk
@@ -47,7 +49,21 @@ Then tell Claude:
 Build a deck from my-outline.md
 ```
 
-Claude will read your outline, ask 3-5 quick questions (audience, tone, theme), then generate a complete `index.html` in one pass.
+Claude reads your outline, asks 3-5 quick questions, then generates a complete `index.html` in one pass.
+
+### Option B — From a prompt (no outline)
+
+```bash
+mkdir ~/decks/my-talk && cd ~/decks/my-talk
+```
+
+Just describe what you want:
+
+```
+Build a deck about Git rebasing best practices for a team of junior devs
+```
+
+Claude will interview you (audience, tone, scope), then generate a proposed outline for your approval. Once you sign off, it builds the full deck. The outline is saved as `OUTLINE.md` for reference.
 
 ## What you get
 
