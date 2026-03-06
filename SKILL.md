@@ -210,7 +210,44 @@ slug: `{001}`, `{002}`, etc. Use as the `slide-tag` content and `data-id`.
 Basement slides append a letter to their parent: `{003a}`, `{003b}`, etc.
 If source content has pre-assigned slugs, honor them.
 
-### 6. HTML output
+### 6. Slide overflow prevention
+
+The viewport is 1280x720 with 0.04 margin. Every slide must fit without
+scrolling or bleeding off-screen. Apply these content budgets:
+
+**Maximum content per slide (approximate):**
+- **Bullet points:** 5-7 items max (single column), 4-5 per column (two-col)
+- **Body text:** 4-5 short paragraphs or 2-3 longer ones
+- **Code blocks:** 10-12 lines max at 0.62em
+- **Panels in cols-2:** 2 panels with 3-4 bullets each
+- **Panels in cols-3:** 3 panels with 2-3 bullets each
+- **Flow steps:** 5-6 max before wrapping becomes a problem
+- **Step-list items:** 4-5 max
+- **Table rows:** 5-7 rows max
+- **Stats in cols-3:** 3 stats (number + label + optional context)
+- **Key-items:** 3-4 max
+- **Timeline items:** 4-5 max
+
+**Red flags — if you see these, the slide is likely overflowing:**
+- More than 7 bullet points on a single slide
+- Two panels each with 5+ bullets
+- A code block over 12 lines
+- Body text with more than 3 paragraphs plus additional components
+- Nested lists (almost always too dense)
+- Any combination of h2 + subtitle text + full cols-2 + callout
+
+**What to do when content exceeds budget:**
+1. First: tighten the language — can you say it in fewer words?
+2. Second: split into two horizontal slides
+3. Third: move the overflow to a basement slide
+4. Fourth: switch to a more compact component (bullets → icon-grid, step-list → flow)
+
+**After generating each slide, do a quick mental check:** count the elements,
+estimate vertical space, and split proactively. It's better to have one extra
+slide than one that bleeds off-screen.
+
+### 7. HTML output
+
 
 Generate a single self-contained `index.html`. Use Reveal.js from CDN:
 
@@ -242,7 +279,7 @@ Reveal.initialize({
 Combine all CSS from the theme + used components + used layouts into a single
 `<style>` block in `<head>`. The output must be fully self-contained.
 
-### 7. Title slide auto-calculation
+### 8. Title slide auto-calculation
 
 After generating all slides, update the title slide with:
 - **Slide count** — total content slides (excluding title)
@@ -254,7 +291,7 @@ After generating all slides, update the title slide with:
 
 Recalculate after every editing pass.
 
-### 8. Serving and previewing
+### 9. Serving and previewing
 
 When the user says "spin it up" or asks to preview:
 
@@ -265,7 +302,7 @@ cd /path/to/deck && python3 -m http.server 8765 &
 Confirm with `curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/`
 and report: **http://localhost:8765**
 
-### 9. Iteration
+### 10. Iteration
 
 After the first draft, expect iteration. Common requests:
 - **"Tighten {003}"** — reduce text, increase visual contrast
@@ -290,7 +327,7 @@ After every editing pass:
   their parent: if `{004}` moves to `{003}`, then `{004a}` becomes `{003a}`.
 - **Recalculate title slide stats** — update slide count and estimated duration.
 
-### 10. Markdown export
+### 11. Markdown export
 
 When the user asks to "export as markdown", "give me a markdown version", or
 "convert this deck to markdown", generate a clean `.md` file from the finished
