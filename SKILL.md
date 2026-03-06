@@ -135,7 +135,7 @@ Every piece is referenced by its kebab-case name:
 **Components:** `panel`, `codeblock`, `callout`, `comparison`, `flow`,
 `step-list`, `file-tree`, `table`, `badge`, `motif`, `filepath`,
 `key-item`, `resource-list`, `effects`, `stat-highlight`, `quote`,
-`agenda`, `timeline`, `icon-grid`
+`agenda`, `timeline`, `icon-grid`, `terminal-embed`
 
 **Layouts:** `title-slide`, `section-divider`, `content-slide`, `code-slide`,
 `comparison-slide`, `resources-slide`, `basement-slide`, `split-slide`,

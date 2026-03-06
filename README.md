@@ -195,6 +195,7 @@ Named, reusable UI elements. Reference by name when talking to Claude.
 | `agenda` | Table of contents with "you are here" highlight — auto-generated from sections |
 | `timeline` | Horizontal timeline with milestones/dates — roadmaps, history, phases |
 | `icon-grid` | Grid of icon + label + description — feature overviews, capabilities |
+| `terminal-embed` | Live terminal in a slide via ttyd — fullscreen or split-panel, interactive during presentation |
 | `effects` | Reveal.js advanced features — fragments, auto-animate, backgrounds, transitions |
 
 ### Adding a new component
@@ -254,6 +255,9 @@ Ask for these in your outline notes or during iteration:
 | **Parallax** | "add parallax scrolling" | Subtle depth effect as slides change (global) |
 | **Transition override** | "zoom into {008}" or "hard cut to {012}" | Per-slide transition style |
 | **Background transition** | "zoom the background on {006}" | Animate just the background independently |
+| **Live terminal** | "embed a terminal on {005}" | Interactive terminal via ttyd (requires `sudo apt install ttyd`) |
+
+**Live terminal modes:** blank shell, open to a specific file (`vim`, `less`), start in a directory, run a command and stay open. Use different ports for different slides. See the `terminal-embed` component for details.
 
 **Transitions available:** `fade` (default), `slide`, `convex`, `concave`, `zoom`, `none`
 
