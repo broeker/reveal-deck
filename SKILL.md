@@ -88,6 +88,19 @@ since they're not displayed to the audience.
 Propose a title and subtitle inferred from the outline or prompt. Let the user
 confirm or override.
 
+**Content analysis (Path A only):**
+After reading the outline, briefly note any obvious gaps or suggestions:
+- Topics the audience would likely expect but aren't covered
+- A missing introduction, summary, or closing slide
+- Opportunities for a comparison, demo, or example that would strengthen a point
+- Sections that feel out of order or could flow better rearranged
+- Content that might work better as a basement slide than in the main flow
+
+Keep this to 2-4 concrete suggestions, not a laundry list. Frame them as
+proposals ("You might want to add a slide on X" / "Consider moving Y before Z")
+and let the user accept, reject, or modify. Don't hold up the build — include
+accepted suggestions in the first draft.
+
 ### 3. Load the theme
 
 Read the selected theme file from `themes/` in this skill's directory.

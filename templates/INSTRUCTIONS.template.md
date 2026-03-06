@@ -38,6 +38,14 @@ After reading the outline, ask a short round of targeted questions (3-5 max). On
 
 Don't ask generic questions the outline already answers. Don't turn this into a long survey -- read the material first, then ask only what's ambiguous.
 
+After reading the outline, also note 2-4 concrete suggestions:
+- Topics the audience would expect but aren't covered
+- A missing intro, summary, or closing
+- Opportunities for a comparison, demo, or example
+- Sections that might flow better rearranged
+
+Frame as proposals, not demands. I'll accept, reject, or modify before you build.
+
 ### Step 2 -- Full draft
 
 After the interview, generate all slides in one pass:
