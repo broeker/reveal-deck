@@ -120,6 +120,25 @@ Every piece is referenced by its kebab-case name:
 - **Comparison slide** — uses `comparison-slide` layout
 - **Resources slide** — uses `resources-slide` layout
 
+**Speaker notes — generate automatically on every content slide:**
+Speaker notes go in `<aside class="notes">` inside each `<section>`. They should
+**add context the slide doesn't show** — not repeat what's already on screen.
+
+Good speaker notes include:
+- The "why" behind a bullet point (the slide says what, you explain why)
+- A short anecdote, example, or analogy to make the point land
+- Transition cues — how to bridge to the next slide
+- Stats or details too granular for the slide but useful when speaking
+- Anticipated audience questions and how to address them
+- Timing hints on dense slides ("spend extra time here")
+
+Bad speaker notes:
+- Restating the slide content verbatim
+- Generic filler ("talk about this topic")
+- Full scripts — these are prompts, not a teleprompter
+
+Keep each note to 2-4 short sentences. The presenter should glance, not read.
+
 **Slug numbering — `{NNN}` format:**
 Every content slide (excluding the title slide) gets a zero-padded sequential
 slug: `{001}`, `{002}`, etc. Use as the `slide-tag` content and `data-id`.
@@ -189,7 +208,7 @@ After the first draft, expect iteration. Common requests:
 - **"Add a section divider before {005}"** — insert and renumber
 - **"Switch the flow on {007} to a step-list"** — swap component
 - **"Change the theme"** — update CSS variables and fonts; layout stays
-- **"Add speaker notes"** — `<aside class="notes">` inside each section
+- **"Improve notes on {003}"** — richer speaker notes for a specific slide
 - **"Make it more visual"** — replace bullet lists with panel grids or flow diagrams
 
 When iterating, use `Edit` (not `Write`) to make targeted changes to `index.html`.
