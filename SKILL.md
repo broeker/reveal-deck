@@ -157,23 +157,41 @@ Every piece is referenced by its kebab-case name:
   own when content warrants a deeper dive but would slow the main horizontal
   flow — examples, walkthroughs, reference lists, optional detail. See the
   `basement-slide` layout for structure and slug conventions (`{003a}`, `{003b}`).
-- **Display choices** — pick the right component for the content. Don't default
-  to bullet lists when a visual component would be stronger:
-  - Bullet lists for sequences and simple enumerations
-  - `panel` for grouped concepts
+- **Display choices — plain bullet lists are the last resort, not the default.**
+  Every slide should use the most visual component that fits the content.
+  Before reaching for `<ul><li>`, ask: "Is there a named component that
+  would make this content more engaging?" Usually the answer is yes.
+
+  **Prefer these over bullet lists:**
+  - `icon-grid` — whenever you have 3-6 items with a label + short description.
+    Use emoji icons that relate to each item. This is almost always better than
+    a bullet list for feature overviews, tool lists, or capability grids.
+  - `step-list` — whenever content has a sequential order. The circled numbers
+    and bold labels are far more scannable than numbered bullets.
+  - `key-item` — for 3-4 important takeaways with emphasis on each number.
+  - `panel` — for 2-3 grouped concepts, especially in a `cols-2` or `cols-3` layout.
+  - `flow` — for processes, lifecycles, or any "A leads to B leads to C" content.
+  - `comparison` — for before/after, good/bad, old/new.
+  - `stat-highlight` — for impactful numbers and metrics.
+  - `timeline` — for chronological progressions.
+  - `table` — for reference data with 3+ columns.
+
+  **Use bullet lists only when:**
+  - The items are truly unstructured and don't fit any component above
+  - There are only 2-3 very short items that don't warrant a full component
+  - The content is inside another component (e.g., bullets inside a `panel`)
+
+  **Other non-list components:**
   - `callout` for key takeaways
   - `codeblock` for commands/syntax
-  - `comparison` for before/after or good/bad
-  - `flow` for processes and lifecycles
-  - `step-list` for ordered procedures
-  - `key-item` for numbered takeaways
   - `file-tree` for directory structures
-  - `table` for reference data
-  - `stat-highlight` for impactful numbers and metrics
   - `quote` for pull quotes and testimonials (slide-level, not inline)
   - `agenda` for table of contents (auto-generate from section dividers)
-  - `timeline` for roadmaps and chronological progressions
-  - `icon-grid` for feature overviews and capability grids
+
+  **Emoji icons:** When using `icon-grid` or adding visual flair to panels
+  and headings, use relevant emoji as icons. Pick emoji that relate to the
+  specific item, not generic decorations. Vary them — don't repeat the same
+  emoji across items on a slide.
 - **External resources** — include links where they add value.
 - **Graphics** — use inline SVG for diagrams, charts, or visuals. Don't force
   visuals where text is clearer.

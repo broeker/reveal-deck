@@ -8,6 +8,17 @@ description: Standard workhorse slide with slug, accent line, and title. Prefer 
 
 The default slide type for most content. Every content slide gets a `{NNN}` slug, accent line, and h2 title. Prefer 2-column layouts; use single column with a panel or callout to fill visual weight when needed.
 
+**Before using this layout with plain bullet lists, consider whether a richer
+component fits the content better:**
+- 3-6 items with labels → `icon-grid` (with emoji icons)
+- Ordered steps → `step-list` (with circled numbers)
+- Key takeaways → `key-item` (with large accent numbers)
+- Grouped concepts → `panel` in `cols-2` or `cols-3`
+- Process/flow → `flow` diagram
+
+Plain `<ul>` bullets should only appear when content is truly unstructured
+or when nested inside another component like a `panel`.
+
 ## HTML
 
 ```html
