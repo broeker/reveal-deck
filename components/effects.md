@@ -82,15 +82,22 @@ or a concept that evolves across 2-3 slides. Don't use between unrelated slides.
 
 ### r-fit-text
 
-Auto-scales text to fill the slide width. Use for section dividers and
-impact statements — never for body content.
+Auto-scales text to fill the slide width. **Use cautiously** — on long text
+it can overflow the right edge of the viewport. Prefer fixed `font-size` on
+section dividers (e.g. `style="font-size:3.5em;"`) and reserve `r-fit-text`
+for very short text (1-3 words) or when combined with `max-width: 100%`.
 
 ```html
-<h2 class="r-fit-text">Big Idea</h2>
+<!-- Preferred for section dividers -->
+<h1 style="font-size:3.5em;">Section Title</h1>
+
+<!-- r-fit-text only for very short text -->
+<h2 class="r-fit-text" style="max-width:100%;">GO</h2>
 ```
 
-**When to auto-use:** Section divider slides, closing statements, single-phrase
-impact slides. Never on slides with mixed content.
+**When to auto-use:** Single-word or very short impact statements only.
+For section dividers, use fixed font-size instead. Never on slides with
+mixed content or titles longer than 3-4 words.
 
 ---
 

@@ -27,14 +27,14 @@ Use for any multi-step process or lifecycle. Steps connect with arrows. One step
   display: flex;
   align-items: center;
   gap: 0;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: 1.25rem 0;
 }
 
 .flow-step {
   font-family: 'Fira Code', monospace;
-  font-size: 0.65em;
-  padding: 0.5em 0.9em;
+  font-size: 0.6em;
+  padding: 0.45em 0.7em;
   background: var(--panel2);
   border: 1px solid var(--border);
   border-radius: 4px;

@@ -243,6 +243,8 @@ scrolling or bleeding off-screen. Apply these content budgets:
 - Body text with more than 3 paragraphs plus additional components
 - Nested lists (almost always too dense)
 - Any combination of h2 + subtitle text + full cols-2 + callout
+- `r-fit-text` on titles longer than 3-4 words (use fixed `font-size` instead)
+- Flow diagrams with 5+ steps without `flex-wrap: wrap`
 
 **What to do when content exceeds budget:**
 1. First: tighten the language — can you say it in fewer words?
@@ -286,6 +288,21 @@ Reveal.initialize({
 
 Combine all CSS from the theme + used components + used layouts into a single
 `<style>` block in `<head>`. The output must be fully self-contained.
+
+**Always include these overflow prevention rules in the base CSS:**
+```css
+.reveal section {
+  padding: 0.5rem 3.5rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 100%;
+}
+.reveal section h1, .reveal section h2 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.reveal .slides section > * { max-width: 100%; }
+```
 
 ### 8. Title slide auto-calculation
 
