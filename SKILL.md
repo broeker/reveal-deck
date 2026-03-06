@@ -193,8 +193,37 @@ Every piece is referenced by its kebab-case name:
   specific item, not generic decorations. Vary them — don't repeat the same
   emoji across items on a slide.
 - **External resources** — include links where they add value.
-- **Graphics** — use inline SVG for diagrams, charts, or visuals. Don't force
-  visuals where text is clearer.
+- **Inline SVG graphics** — proactively generate inline SVG diagrams where they
+  strengthen the slide. Don't wait for the user to ask — if a concept would be
+  clearer as a visual, generate one. Use theme CSS variables for colors.
+
+  **Auto-use SVG when content matches these patterns:**
+  - System architecture, layers, or tiers → layered stack diagram
+  - Any "A connects to B" concept → network/node diagram
+  - Numeric comparisons → horizontal bar chart
+  - Proportions or composition → donut/ring chart
+  - Narrowing process → funnel diagram
+  - Overlapping concepts → Venn diagram
+  - Completion or health metrics → gauge/arc chart
+  - Security or protection topic → shield icon
+
+  **Style rules for SVG:**
+  - Use `var(--cyan)`, `var(--amber)`, `var(--muted)` or their raw hex values
+  - Use `font-family="monospace"` for labels (matches Fira Code)
+  - Keep opacity low for fills (0.05-0.15), slightly higher for strokes (0.2-0.4)
+  - Dark fills (`#0D1526`, `#060A12`) for backgrounds within the SVG
+  - Keep SVGs simple — 5-8 elements max. These accent the slide, not dominate it
+  - Place in a `cols-2` layout alongside text content, or centered on the slide
+
+  **Don't force it** — if the content is a simple list of facts, a component like
+  `icon-grid` or `step-list` is better than a chart. SVG is for concepts that
+  benefit from spatial/visual representation.
+
+  **User can also request SVG explicitly** in their outline or during iteration:
+  - "add a diagram showing the deploy pipeline"
+  - "visualize this as a bar chart"
+  - "add a Venn diagram for dev vs ops"
+  - "[diagram: layered architecture]" in the outline markdown
 - **Effects** — read the `effects` component for Reveal.js advanced features.
   Auto-use fragments on dense lists, auto-animate between related slides,
   and r-fit-text on section dividers. All other effects (background images,

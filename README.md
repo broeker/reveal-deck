@@ -286,6 +286,12 @@ For the full list of Reveal.js features, see the [official demo](https://revealj
 - **Use `###` for deeper dives** — sub-headings become basement (vertical) slides below their parent
 - **Include raw notes** — don't worry about length; too much is better than too little
 - **Note special requests inline** — "show this as a comparison", "include a diagram here"
+- **Request diagrams** — Claude generates inline SVG graphics automatically where they fit, but you can also request them explicitly:
+  - `[diagram: layered architecture]`
+  - `[chart: bar chart comparing X, Y, Z]`
+  - `[diagram: funnel from raw notes to polished deck]`
+  - `[chart: donut showing 70/20/10 split]`
+  - `[diagram: Venn — dev tools vs ops tools]`
 - **Mark what matters** — bold or emphasize key points you don't want lost in condensing
 
 ```markdown
