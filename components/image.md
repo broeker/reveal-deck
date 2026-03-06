@@ -9,6 +9,22 @@ description: Image handling for slides — background images, inline images, Uns
 Images can appear in slides as full-bleed backgrounds, inline content, or
 framed screenshots. This component covers all image patterns.
 
+### Named image patterns
+
+Users and Claude reference these by name during building and iteration:
+
+| Pattern | Description | Auto-use? |
+|---------|------------|-----------|
+| `backdrop` | Full-bleed background photo, low opacity (0.15-0.25), content on top | Yes — section dividers, mood slides |
+| `hero` | Full-bleed photo IS the slide (0.5-0.7), minimal overlay text | No — on request |
+| `split-image` | 50/50 layout — photo fills one half, content on the other | Yes — team, workspace, tool slides |
+| `inline-image` | Photo in a cols-2 alongside text, rounded + bordered | No — on request |
+| `image-grid` | 2-3 photos in cols-2/cols-3 with captions below | No — on request |
+| `screenshot` | Photo/image in browser-frame chrome (macOS dots + URL bar) | Yes — when showing a website/tool |
+| `before-after` | Two labeled images side by side (red "Before" / green "After") | Yes — comparison content |
+| `backdrop-quote` | Background photo behind a pull quote in overlay box | Yes — quote slides |
+| `backdrop-panels` | Background photo behind panel components (panels get 90% bg) | No — on request |
+
 ### Image sources
 
 | Source | How to reference | Notes |

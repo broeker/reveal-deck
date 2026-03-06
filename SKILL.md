@@ -224,20 +224,39 @@ Every piece is referenced by its kebab-case name:
   - "visualize this as a bar chart"
   - "add a Venn diagram for dev vs ops"
   - "[diagram: layered architecture]" in the outline markdown
-- **Photos and images** — see the `image` component for full details. Key patterns:
-  - **Unsplash** — use direct URLs (`https://images.unsplash.com/photo-ID?w=1280&q=80`)
-    for free stock photos. No API key, no attribution required. Search for relevant
-    images when the user asks or when a slide would benefit from a photo background.
-  - **Background images** — `data-background-image` with low opacity (0.2-0.3) for
-    readability. Good for mood/atmosphere slides.
-  - **Local files** — user places images in `./images/` in the deck directory.
-    Remind them to do this when referencing local files.
-  - **Screenshots** — use the browser-frame treatment (`.screenshot-frame` with
-    macOS chrome dots) to make screenshots look polished. This is the recommended
-    fallback when iframe embedding is blocked by a site's headers.
-  - **GIF backgrounds** — `data-background-image` with a Giphy URL.
-  - All image types are on-request — don't add background photos unless the user
-    asks or notes them in the outline. SVG diagrams are the exception (auto-use).
+- **Photos and images** — see the `image` component for full details. Use
+  Unsplash direct URLs (`https://images.unsplash.com/photo-ID?w=1280&q=80`)
+  for free stock photos — no API key, no attribution required.
+
+  **Named image patterns** (use these names in code comments and speaker notes):
+
+  | Pattern name | What it is | Opacity |
+  |-------------|-----------|---------|
+  | `backdrop` | Full-bleed background photo, content on top | 0.15-0.25 |
+  | `hero` | Full-bleed photo IS the slide, minimal overlay text | 0.5-0.7 |
+  | `split-image` | 50/50 — photo on one side, content on the other | n/a |
+  | `inline-image` | Photo in a cols-2 alongside text | n/a |
+  | `image-grid` | 2-3 photos in cols-2 or cols-3 with captions | n/a |
+  | `screenshot` | Photo/screenshot in browser-frame chrome | n/a |
+  | `before-after` | Two labeled images side by side | n/a |
+  | `backdrop-quote` | Background photo behind a pull quote | 0.15-0.25 |
+  | `backdrop-panels` | Background photo behind panel components | 0.1-0.2 |
+
+  **Auto-use — add images proactively when content matches:**
+  - Section dividers about a new topic → `backdrop` with a relevant mood photo
+  - Slide with a strong quote → `backdrop-quote`
+  - "Before and after" or comparison content → `before-after` with two photos
+  - Content about a specific tool/site → `screenshot` in browser frame
+  - Slide about team, workspace, or culture → `split-image`
+
+  **Restraint:** Use images on ~20-30% of slides. Not every slide needs a photo.
+  SVG diagrams and components (icon-grid, panels, etc.) are the primary visual
+  tools. Photos add variety and emotional impact at key moments.
+
+  **On-request patterns:**
+  - **Local files** — user places images in `./images/` in the deck directory
+  - **GIF backgrounds** — `data-background-image` with a Giphy URL
+  - **Specific photos** — user provides a URL or describes what they want
 - **Effects** — read the `effects` component for Reveal.js advanced features.
   Auto-use fragments on dense lists, auto-animate between related slides,
   and r-fit-text on section dividers. All other effects (background images,

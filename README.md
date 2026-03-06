@@ -299,26 +299,40 @@ Available diagram styles: architecture stacks, network/node diagrams, bar charts
 
 ### Photos and background images
 
-Add photos to slides using any of these methods:
+Claude adds relevant photos on ~20-30% of slides during generation (section openers, quotes, comparisons). You can also request them in your outline or during iteration using **named image patterns**:
 
+| Pattern | What you get | How to request |
+|---------|-------------|----------------|
+| `backdrop` | Full-bleed photo behind content, low opacity | "add a backdrop to {005}" |
+| `hero` | Photo dominates the slide, minimal text overlay | "make {003} a hero image" |
+| `split-image` | 50/50 — photo on one side, content on the other | "split-image on {007}" |
+| `inline-image` | Photo beside text in a two-column layout | "add an inline image to {004}" |
+| `image-grid` | 2-3 photos in a row with captions | "image-grid on {008}" |
+| `screenshot` | Photo in a browser frame (macOS chrome) | "add a screenshot to {006}" |
+| `before-after` | Two labeled images side by side | "before-after on {009}" |
+| `backdrop-quote` | Background photo behind a pull quote | "backdrop-quote on {010}" |
+
+**In your outline:**
 ```markdown
 ## The Team
-[background image: dark office with code on screens]
+[split-image: dark office with developers]
 
 ## Our Stack
-[image: screenshot of the Drupal admin]
+[screenshot: the Drupal admin dashboard]
+
+## Why It Matters
+[backdrop: moody server room photo]
+
+## Before and After
+[before-after: messy desk vs clean modern setup]
 ```
 
-Or during iteration: "add a background image to {005}".
-
 **Image sources:**
-- **Unsplash** — Claude uses direct Unsplash URLs for free stock photos. No account or API key needed, no attribution required.
-- **Local files** — place images in an `images/` folder in your deck directory and reference as `./images/photo.jpg`
-- **URLs** — any direct image URL works
+- **Unsplash** — Claude uses free stock photos via direct URL. No account needed, no attribution required.
+- **Local files** — place in an `images/` folder in your deck directory
+- **Any URL** — provide a direct image link
 
-**Background images** appear behind slide content at low opacity for readability. **Inline images** appear alongside text, typically in a 2-column layout.
-
-**Screenshots** get a browser-frame treatment (macOS-style chrome dots and URL bar) to look polished — recommended over iframes for external websites that block embedding.
+**Screenshots** get a browser-frame treatment (macOS-style dots + URL bar) — recommended over iframes for external websites that block embedding.
 
 ### Iframe limitations
 
@@ -379,7 +393,7 @@ Claude will also create basement slides on its own when content warrants a deepe
 - **Make it more visual** — "replace the bullets on {004} with an `icon-grid`", "add a diagram to {005}", "convert {008} to a `step-list`"
 - **Ask for additions** — "add a `callout` to {004} with the key takeaway"
 - **Request effects** — "fullscreen gif on {005}", "auto-animate {003} to {004}", "add fragments to {006}", "embed this URL as an iframe on {010}"
-- **Add images** — "add a background photo to {003}", "add a screenshot of the Drupal admin to {007}"
+- **Add images** — use pattern names: "add a `backdrop` to {003}", "`screenshot` on {007}", "`split-image` on {004}", "`hero` on {002}"
 - **Move slides vertically** — "move {005} to a basement slide under {004}" or "promote {004a} to the main flow"
 
 ### Previewing
