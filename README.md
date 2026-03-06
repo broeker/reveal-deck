@@ -195,6 +195,7 @@ Named, reusable UI elements. Reference by name when talking to Claude.
 | `agenda` | Table of contents with "you are here" highlight — auto-generated from sections |
 | `timeline` | Horizontal timeline with milestones/dates — roadmaps, history, phases |
 | `icon-grid` | Grid of icon + label + description — feature overviews, capabilities |
+| `image` | Background images, inline photos, Unsplash stock, screenshots in browser frames |
 | `terminal-embed` | **Advanced:** Live terminal in a slide via ttyd — requires separate install ([setup](#live-terminal-slides)) |
 | `effects` | Reveal.js advanced features — fragments, auto-animate, backgrounds, transitions |
 
