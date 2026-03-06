@@ -182,6 +182,18 @@ Every piece is referenced by its kebab-case name:
   and r-fit-text on section dividers. All other effects (background images,
   GIFs, video, iframes, parallax, per-slide transitions) are on-request only
   — use them when the user asks or notes them in the outline.
+- **Motif placement (mandatory)** — the theme's motif icon is a structural
+  element, not optional decoration. On every content slide:
+  1. Add a `motif-bg` (huge ghosted icon) with `position:absolute` in a corner
+     or centered. Vary the position slide-to-slide (top-right, bottom-left,
+     center, mid-right, etc.) so it feels dynamic.
+  2. Alternate motif color between `var(--cyan)` and `var(--amber)` across
+     consecutive slides.
+  3. On ~40-50% of slides, also add a `motif-sm` inline with the `<h2>` heading.
+  4. On ~20-30% of slides, add a `motif-corner` for extra presence.
+  5. Never stack more than 2 motif treatments per slide (bg + one other).
+  The motif should feel omnipresent — like a watermark or brand signature that
+  ties every slide together. See the `motif` component for CSS and HTML.
 
 **Slide types:**
 - **Title slide** — always first, uses `title-slide` layout

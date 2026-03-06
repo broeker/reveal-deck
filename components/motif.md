@@ -17,20 +17,29 @@ The motif icon is set by the theme. Examples:
 
 ### Treatments
 
-| Class | Purpose | Typical placement |
-|-------|---------|-------------------|
-| `motif-bg` | Huge ghosted icon, nearly invisible, creates depth | `position:absolute` in a slide corner or center |
-| `motif-sm` | Small inline icon | Next to h2 titles |
-| `motif-md` | Medium standalone accent | Between content sections |
-| `motif-corner` | Medium-opacity icon anchored to a slide corner | `position:absolute` top-right or bottom-right |
+| Class | Purpose | Required? | Typical placement |
+|-------|---------|-----------|-------------------|
+| `motif-bg` | Huge ghosted icon, nearly invisible, creates depth | **Yes — every content slide** | `position:absolute` in a slide corner or center |
+| `motif-sm` | Small inline icon | Optional | Next to h2 titles |
+| `motif-md` | Medium standalone accent | Optional | Between content sections |
+| `motif-corner` | Medium-opacity icon anchored to a slide corner | Optional | `position:absolute` top-right or bottom-right |
 
 ### Rules
 
-- Never use the same treatment on consecutive slides — rotate through them
-- Alternate accent colors (e.g. `cyan` and `amber`) across slides
-- Background motifs use inline `style="color:var(--cyan)"` or `style="color:var(--amber)"`
-- Not every slide needs a motif — use on ~60-70% of slides
-- The motif should feel like a brand element, not decoration for its own sake
+**Baseline (mandatory on every content slide):**
+- Every content slide gets a `motif-bg` — the huge ghosted background icon.
+  This is a structural element like `slide-tag` or `accent-line`, not optional.
+- Vary the position across slides: `top:-40px; right:-60px`, `bottom:-60px; left:-80px`,
+  `top:50%; right:-60px; transform:translateY(-50%)`, `left:50%; top:50%; transform:translate(-50%,-50%)`, etc.
+- Alternate between `color:var(--cyan)` and `color:var(--amber)` so consecutive
+  slides don't repeat the same color.
+
+**Layering (additional treatments on top of motif-bg):**
+- Add `motif-sm` inline with `<h2>` on ~40-50% of slides for extra branding
+- Add `motif-corner` on ~20-30% of slides for variety
+- Use `motif-md` sparingly for standalone accent moments
+- Never stack more than 2 treatments on the same slide (bg + one other)
+- The motif should feel like a brand signature — present everywhere but not overwhelming
 
 ## HTML
 

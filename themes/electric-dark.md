@@ -206,9 +206,16 @@ blockquote {
 
 ## Motif
 
-- **Icon:** `&#9889;` (lightning bolt emoji)
+- **Icon:** `&#9889;` (lightning bolt emoji, renders as ⚡)
 - **Component:** `motif` (defines the size/opacity treatments)
-- **Notes:** Fits the electric/terminal aesthetic. Alternate cyan and amber across slides.
+- **Required:** Yes — the lightning bolt is the signature of this theme. Every
+  content slide must include at least a `motif-bg` (huge ghosted bolt in a corner).
+  Many slides should also include a `motif-sm` inline with the heading. The bolt
+  should feel omnipresent — a watermark-like brand element on every slide, not
+  occasional decoration.
+- **Colors:** Alternate `var(--cyan)` and `var(--amber)` across slides.
+- **Positions:** Vary corner placement — top-right, bottom-left, center, mid-right —
+  so the bolt feels dynamic, not stamped in the same spot.
 
 ## Recommended components
 
