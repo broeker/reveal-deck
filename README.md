@@ -10,6 +10,65 @@ A Claude Code skill for building production-quality Reveal.js slide decks. Works
 
 This symlinks the skill into `~/.claude/skills/`. The slash command is `/slides`.
 
+## What is Reveal.js?
+
+[Reveal.js](https://revealjs.com/) is an open-source HTML presentation framework. Instead of PowerPoint or Google Slides, your deck is a single `index.html` file that runs in any web browser. This skill generates that file for you — you don't need to know HTML or CSS.
+
+### Why Reveal.js?
+
+- **Version-controllable** — it's just a text file, so it lives in Git alongside your code
+- **No vendor lock-in** — works in any browser, no account or app needed
+- **Portable** — email the HTML file, drop it on a server, or open it locally
+- **Powerful** — supports animations, speaker notes, PDF export, live code, embedded iframes, and more
+- **Themeable** — full control over design via CSS (this skill handles that for you)
+
+### How it works
+
+Your deck is an `index.html` file. To present, you just open it in a browser. That's it.
+
+For local development, Claude will start a simple server for you:
+
+```
+http://localhost:8765
+```
+
+### Navigation
+
+| Key | Action |
+|-----|--------|
+| Right arrow / Space | Next slide |
+| Left arrow | Previous slide |
+| Down arrow | Basement slide (deeper dive) |
+| Up arrow | Back up from basement |
+| `Esc` | Overview — see all slides, click to jump |
+| `S` | Speaker view — notes, timer, next slide preview |
+| `B` or `.` | Blackout screen |
+| `F` | Fullscreen |
+| `Alt + click` | Zoom into an element |
+| `?` | Show all shortcuts |
+
+### Slide structure
+
+Slides flow **left to right** for the main narrative. Some slides have **basement slides** below them (navigate down) for deeper dives the presenter can skip or explore.
+
+```
+[Title] → [Slide 1] → [Slide 2] → [Slide 3] → [Closing]
+                          ↓
+                      [Detail 2a]
+                          ↓
+                      [Detail 2b]
+```
+
+### Speaker view
+
+Press `S` to open a separate window with:
+- Your speaker notes for the current slide
+- A preview of the next slide
+- A timer
+- Current/total slide count
+
+This is why every slide gets auto-generated speaker notes — they're there when you need them.
+
 ## Quick start
 
 ### Option A — From a markdown outline
@@ -252,18 +311,7 @@ Claude will also create basement slides on its own when content warrants a deepe
 
 Say "spin it up" and Claude will start a local server at `http://localhost:8765`.
 
-## Presenter tips
-
-These Reveal.js features work out of the box on every generated deck:
-
-| Shortcut | What it does |
-|----------|-------------|
-| `S` | Open **speaker view** — shows your notes, a timer, and the next slide in a separate window |
-| `Esc` | **Overview mode** — see all slides at once, click to jump to any slide |
-| `B` or `.` | **Blackout** — blank the screen (useful during Q&A or discussion) |
-| `Alt + click` | **Zoom** into any element on a slide |
-| `?` | Show all keyboard shortcuts |
-| Arrow keys | Navigate (right = next, left = prev, down = basement, up = back up) |
+## Exporting and sharing
 
 ### PDF export
 
