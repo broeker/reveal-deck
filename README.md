@@ -123,6 +123,7 @@ Named, reusable UI elements. Reference by name when talking to Claude.
 | `filepath` | Inline path badge (amber/green variants) |
 | `key-item` | Numbered takeaway list with large accent numbers |
 | `resource-list` | Categorized link list for references slides |
+| `effects` | Reveal.js advanced features — fragments, auto-animate, backgrounds, transitions |
 
 ### Adding a new component
 
@@ -172,6 +173,7 @@ Slide-level patterns that combine components into complete slide structures.
 - **Be direct** — "tighten {003}" works better than "can you maybe make slide 3 a bit shorter?"
 - **Request component swaps** — "switch {007} from bullets to a `flow` diagram"
 - **Ask for additions** — "add a `callout` to {004} with the key takeaway"
+- **Request effects** — "fullscreen gif on {005}", "auto-animate {003} to {004}", "add fragments to {006}", "embed this URL as an iframe on {010}"
 
 ### Previewing
 

@@ -108,7 +108,7 @@ Every piece is referenced by its kebab-case name:
 
 **Components:** `panel`, `codeblock`, `callout`, `comparison`, `flow`,
 `step-list`, `file-tree`, `table`, `badge`, `motif`, `filepath`,
-`key-item`, `resource-list`
+`key-item`, `resource-list`, `effects`
 
 **Layouts:** `title-slide`, `section-divider`, `content-slide`, `code-slide`,
 `comparison-slide`, `resources-slide`
@@ -137,6 +137,11 @@ Every piece is referenced by its kebab-case name:
 - **External resources** — include links where they add value.
 - **Graphics** — use inline SVG for diagrams, charts, or visuals. Don't force
   visuals where text is clearer.
+- **Effects** — read the `effects` component for Reveal.js advanced features.
+  Auto-use fragments on dense lists, auto-animate between related slides,
+  and r-fit-text on section dividers. All other effects (background images,
+  GIFs, video, iframes, parallax, per-slide transitions) are on-request only
+  — use them when the user asks or notes them in the outline.
 
 **Slide types:**
 - **Title slide** — always first, uses `title-slide` layout
@@ -236,6 +241,10 @@ After the first draft, expect iteration. Common requests:
 - **"Change the theme"** — update CSS variables and fonts; layout stays
 - **"Improve notes on {003}"** — richer speaker notes for a specific slide
 - **"Make it more visual"** — replace bullet lists with panel grids or flow diagrams
+- **"Fullscreen gif on {005}"** — apply GIF background (see `effects` component)
+- **"Embed this URL as an iframe on {010}"** — iframe background
+- **"Auto-animate {003} to {004}"** — smooth morph between related slides
+- **"Add fragments to {006}"** — progressive reveal on list items
 
 When iterating, use `Edit` (not `Write`) to make targeted changes to `index.html`.
 Always recalculate title slide stats after changes.
