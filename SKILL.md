@@ -58,6 +58,32 @@ Good questions:
 - Any slides needing special treatment (heavy visuals, specific layout)?
 - Tone — technical deep-dive, casual overview, persuasive pitch?
 - Anything in the notes that's unclear or seems incomplete? (Path A only)
+- Content voice (Path A only) — see below
+
+**Content voice — how closely to preserve the user's language:**
+
+During the interview for Path A, gauge how polished the outline is and ask
+the user where they fall on this spectrum:
+
+- **Preserve** — the outline contains carefully crafted language. Keep the
+  user's exact wording on slides wherever possible. Only restructure for
+  slide fit (line breaks, bullet formatting). Tighten for space but don't
+  rephrase. Speaker notes can use Claude's voice.
+- **Refine** (default) — the outline has good ideas but rough language.
+  Improve clarity, tighten phrasing, and punch up key points while keeping
+  the user's intent and terminology. Don't over-polish into generic
+  corporate tone — match the user's voice, just sharpen it.
+- **Transform** — the outline is raw notes, brain dumps, or stream of
+  consciousness. Claude has full license to rewrite, restructure, and
+  craft the slide language from scratch. Preserve the ideas and key terms,
+  but the words are Claude's.
+
+If the outline is clearly one extreme (polished prose vs. messy bullets),
+propose the appropriate mode and confirm. If ambiguous, ask. Default to
+**Refine** if the user doesn't have a preference.
+
+This applies to slide content only — speaker notes always use Claude's voice
+since they're not displayed to the audience.
 
 Propose a title and subtitle inferred from the outline or prompt. Let the user
 confirm or override.
