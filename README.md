@@ -313,6 +313,16 @@ Say "spin it up" and Claude will start a local server at `http://localhost:8765`
 
 ## Exporting and sharing
 
+### Markdown export
+
+Ask Claude to export the finished deck as a readable markdown document:
+
+```
+export this deck as markdown
+```
+
+This generates a clean `.md` file with all slide content, speaker notes as blockquotes, and component markup converted to markdown equivalents (panels become blockquotes, code blocks stay code blocks, etc.). Useful for sharing content without the presentation format, archiving, or as a handout.
+
 ### PDF export
 
 Add `?print-pdf` to the URL and print from the browser:

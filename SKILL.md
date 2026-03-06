@@ -290,6 +290,56 @@ After every editing pass:
   their parent: if `{004}` moves to `{003}`, then `{004a}` becomes `{003a}`.
 - **Recalculate title slide stats** — update slide count and estimated duration.
 
+### 10. Markdown export
+
+When the user asks to "export as markdown", "give me a markdown version", or
+"convert this deck to markdown", generate a clean `.md` file from the finished
+`index.html`:
+
+**Structure:**
+```markdown
+# Deck Title
+*Subtitle — Presenter, Date*
+*15 slides / ~18 min*
+
+---
+
+## {001} Slide Title
+
+Slide content converted to clean markdown — bullet lists, bold, inline code,
+links all preserved. Component-specific markup (panels, callouts, etc.)
+converted to the closest markdown equivalent:
+
+- `panel` → blockquote or indented section with bold label
+- `callout` → blockquote prefixed with **Key takeaway:**
+- `codeblock` → fenced code block
+- `comparison` → two blockquotes labeled **Without:** / **With:**
+- `flow` → inline: Step 1 → Step 2 → Step 3
+- `step-list` → numbered list
+- `file-tree` → fenced code block
+- `table` → markdown table
+- `stat-highlight` → **87%** — label text
+- `quote` → blockquote with attribution
+- `timeline` → table or list with dates
+- `icon-grid` → bullet list with bold labels
+
+> **Speaker notes:** The note content goes here, separated from slide
+> content so the reader gets the extra context.
+
+---
+
+## {002} Next Slide Title
+...
+```
+
+**Rules:**
+- Speaker notes are included as blockquotes at the end of each slide section
+- Section dividers become `---` with a `## Section Title` heading
+- Basement slides are indented under their parent (use `###` headings)
+- Links are preserved as markdown links
+- SVG graphics and decorative elements (motifs, accent lines) are omitted
+- Save as `DECK-TITLE.md` in the deck directory (kebab-case filename)
+
 ## Adding new components
 
 To add a new component to this toolkit:
