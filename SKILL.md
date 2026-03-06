@@ -204,6 +204,11 @@ Every piece is referenced by its kebab-case name:
 - **Resources slide** — uses `resources-slide` layout
 - **Split slide** — uses `split-slide` layout (50/50 visual + content)
 - **Closing slide** — uses `closing-slide` layout (CTA, contact, QR code)
+- **Terminal slide** (advanced, on-request only) — live interactive terminal
+  via ttyd. **Never add unless the user explicitly asks.** When adding one,
+  include a speaker note: `<!-- REQUIRES: ttyd -W -p 7681 bash & -->` and
+  warn the user that ttyd must be installed and running before presenting.
+  See the `terminal-embed` component for setup details.
 
 **Speaker notes — generate automatically on every content slide:**
 Speaker notes go in `<aside class="notes">` inside each `<section>`. They should

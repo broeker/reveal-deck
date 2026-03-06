@@ -195,7 +195,7 @@ Named, reusable UI elements. Reference by name when talking to Claude.
 | `agenda` | Table of contents with "you are here" highlight — auto-generated from sections |
 | `timeline` | Horizontal timeline with milestones/dates — roadmaps, history, phases |
 | `icon-grid` | Grid of icon + label + description — feature overviews, capabilities |
-| `terminal-embed` | Live terminal in a slide via ttyd — fullscreen or split-panel, interactive during presentation |
+| `terminal-embed` | **Advanced:** Live terminal in a slide via ttyd — requires separate install ([setup](#live-terminal-slides)) |
 | `effects` | Reveal.js advanced features — fragments, auto-animate, backgrounds, transitions |
 
 ### Adding a new component
@@ -255,9 +255,7 @@ Ask for these in your outline notes or during iteration:
 | **Parallax** | "add parallax scrolling" | Subtle depth effect as slides change (global) |
 | **Transition override** | "zoom into {008}" or "hard cut to {012}" | Per-slide transition style |
 | **Background transition** | "zoom the background on {006}" | Animate just the background independently |
-| **Live terminal** | "embed a terminal on {005}" | Interactive terminal via ttyd (requires `sudo apt install ttyd`) |
-
-**Live terminal modes:** blank shell, open to a specific file (`vim`, `less`), start in a directory, run a command and stay open. Use different ports for different slides. See the `terminal-embed` component for details.
+| **Live terminal** | "embed a terminal on {005}" | Interactive terminal via ttyd — advanced, [see setup](#live-terminal-slides) |
 
 **Transitions available:** `fade` (default), `slide`, `convex`, `concave`, `zoom`, `none`
 
@@ -339,9 +337,15 @@ You can also say "spin it up" and Claude will run it for you.
 
 ### Live terminal slides
 
-Some decks embed a live terminal using `ttyd`. If your deck has terminal slides, `serve.sh` will warn you if ttyd isn't running.
+> **Advanced feature.** Terminal slides require installing `ttyd`, a separate
+> tool that serves a terminal over HTTP. If you don't need live terminal demos,
+> skip this section — everything else works without it. If ttyd isn't running
+> when you hit a terminal slide, you'll see a blank frame; the rest of the deck
+> is unaffected.
 
-**Install ttyd:**
+To add a terminal slide, ask Claude: "embed a terminal on {005}".
+
+**Install ttyd (one-time):**
 ```bash
 # Ubuntu/Debian
 sudo apt install ttyd
@@ -350,7 +354,7 @@ sudo apt install ttyd
 brew install ttyd
 ```
 
-**Start before presenting:**
+**Start before presenting** (the `-W` flag is required — ttyd is read-only by default):
 ```bash
 # Blank terminal
 ttyd -W -p 7681 bash &
@@ -366,6 +370,8 @@ ttyd -W -p 7681 bash -c "drush status; exec bash" &
 ```
 
 Use different ports for different terminal slides. Kill all after presenting: `pkill ttyd`
+
+`serve.sh` will detect terminal slides and warn you if ttyd isn't installed or running.
 
 ## Exporting and sharing
 

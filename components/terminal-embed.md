@@ -1,22 +1,32 @@
 ---
 name: terminal-embed
 category: component
-description: Live terminal embedded in a slide via ttyd. Fullscreen or split-panel. Interactive during presentation — type real commands, open files, run demos.
+description: "Advanced/optional: Live terminal embedded in a slide via ttyd. Fullscreen or split-panel. Interactive during presentation — type real commands, open files, run demos. Requires ttyd installed separately."
 ---
 
 ## Usage
+
+**This is an advanced, on-request component.** Do not add terminal slides
+unless the user explicitly asks for one. When they do, include a speaker
+note warning that ttyd must be installed and running before presenting.
 
 Embed a live terminal session directly in a slide using [ttyd](https://github.com/tsl0922/ttyd),
 a lightweight tool that serves a terminal over HTTP. The presenter can type
 live commands during the talk.
 
 **Requires:** `ttyd` installed on the presenter's machine and running before
-the presentation starts.
+the presentation starts. Not installed by default on most systems.
 
 ```bash
 # Ubuntu/Debian
 sudo apt install ttyd
+
+# macOS
+brew install ttyd
 ```
+
+If ttyd is not running when the slide loads, the audience sees a blank frame
+— the rest of the deck is unaffected.
 
 ### Terminal modes
 
