@@ -107,7 +107,7 @@ on the content.
 Every piece is referenced by its kebab-case name:
 
 **Components:** `panel`, `codeblock`, `callout`, `comparison`, `flow`,
-`step-list`, `file-tree`, `table`, `badge`, `bolt-motif`, `filepath`,
+`step-list`, `file-tree`, `table`, `badge`, `motif`, `filepath`,
 `key-item`, `resource-list`
 
 **Layouts:** `title-slide`, `section-divider`, `content-slide`, `code-slide`,

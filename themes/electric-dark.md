@@ -204,9 +204,15 @@ blockquote {
 }
 ```
 
+## Motif
+
+- **Icon:** `&#9889;` (lightning bolt emoji)
+- **Component:** `motif` (defines the size/opacity treatments)
+- **Notes:** Fits the electric/terminal aesthetic. Alternate cyan and amber across slides.
+
 ## Recommended components
 
-- `bolt-motif` — primary decorative element, fits the electric aesthetic
+- `motif` — repeating visual icon system (this theme uses the lightning bolt)
 - `codeblock` — terminal-style code blocks match the dark theme
 - `panel` — bordered cards use accent/border variables
 - `callout` — highlighted boxes with accent glow

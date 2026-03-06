@@ -119,7 +119,7 @@ Named, reusable UI elements. Reference by name when talking to Claude.
 | `file-tree` | Monospace directory tree |
 | `table` | Styled data table with accent headers |
 | `badge` | Small pill label (status indicators) |
-| `bolt-motif` | Lightning bolt decorative system (multiple treatments) |
+| `motif` | Repeating visual icon system — icon defined by theme (bolt, rocket, logo, etc.) |
 | `filepath` | Inline path badge (amber/green variants) |
 | `key-item` | Numbered takeaway list with large accent numbers |
 | `resource-list` | Categorized link list for references slides |
