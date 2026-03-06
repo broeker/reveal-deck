@@ -257,7 +257,11 @@ After the first draft, expect iteration. Common requests:
 - **"Add fragments to {006}"** — progressive reveal on list items
 
 When iterating, use `Edit` (not `Write`) to make targeted changes to `index.html`.
-Always recalculate title slide stats after changes.
+After every editing pass:
+- **Renumber all slugs** — keep `{NNN}` sequential with no gaps. If you drop
+  `{004}`, what was `{005}` becomes `{004}`, etc. Basement suffixes follow
+  their parent: if `{004}` moves to `{003}`, then `{004a}` becomes `{003a}`.
+- **Recalculate title slide stats** — update slide count and estimated duration.
 
 ## Adding new components
 
