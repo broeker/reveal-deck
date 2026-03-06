@@ -121,10 +121,12 @@ Every piece is referenced by its kebab-case name:
 
 **Components:** `panel`, `codeblock`, `callout`, `comparison`, `flow`,
 `step-list`, `file-tree`, `table`, `badge`, `motif`, `filepath`,
-`key-item`, `resource-list`, `effects`
+`key-item`, `resource-list`, `effects`, `stat-highlight`, `quote`,
+`agenda`, `timeline`, `icon-grid`
 
 **Layouts:** `title-slide`, `section-divider`, `content-slide`, `code-slide`,
-`comparison-slide`, `resources-slide`, `basement-slide`
+`comparison-slide`, `resources-slide`, `basement-slide`, `split-slide`,
+`closing-slide`
 
 ### 5. Content strategy
 
@@ -154,6 +156,11 @@ Every piece is referenced by its kebab-case name:
   - `key-item` for numbered takeaways
   - `file-tree` for directory structures
   - `table` for reference data
+  - `stat-highlight` for impactful numbers and metrics
+  - `quote` for pull quotes and testimonials (slide-level, not inline)
+  - `agenda` for table of contents (auto-generate from section dividers)
+  - `timeline` for roadmaps and chronological progressions
+  - `icon-grid` for feature overviews and capability grids
 - **External resources** — include links where they add value.
 - **Graphics** — use inline SVG for diagrams, charts, or visuals. Don't force
   visuals where text is clearer.
@@ -170,6 +177,8 @@ Every piece is referenced by its kebab-case name:
 - **Code slide** — uses `code-slide` layout
 - **Comparison slide** — uses `comparison-slide` layout
 - **Resources slide** — uses `resources-slide` layout
+- **Split slide** — uses `split-slide` layout (50/50 visual + content)
+- **Closing slide** — uses `closing-slide` layout (CTA, contact, QR code)
 
 **Speaker notes — generate automatically on every content slide:**
 Speaker notes go in `<aside class="notes">` inside each `<section>`. They should

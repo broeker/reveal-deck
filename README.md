@@ -123,6 +123,11 @@ Named, reusable UI elements. Reference by name when talking to Claude.
 | `filepath` | Inline path badge (amber/green variants) |
 | `key-item` | Numbered takeaway list with large accent numbers |
 | `resource-list` | Categorized link list for references slides |
+| `stat-highlight` | Large number/metric with label — for data that needs to land |
+| `quote` | Full-width pull quote with attribution — when the quote IS the slide |
+| `agenda` | Table of contents with "you are here" highlight — auto-generated from sections |
+| `timeline` | Horizontal timeline with milestones/dates — roadmaps, history, phases |
+| `icon-grid` | Grid of icon + label + description — feature overviews, capabilities |
 | `effects` | Reveal.js advanced features — fragments, auto-animate, backgrounds, transitions |
 
 ### Adding a new component
@@ -152,6 +157,8 @@ Slide-level patterns that combine components into complete slide structures.
 | `comparison-slide` | Side-by-side comparison layout |
 | `resources-slide` | Categorized links for references/further reading |
 | `basement-slide` | Vertical (down) slides for deeper dives beneath a main slide |
+| `split-slide` | 50/50 split — one half visual (color/image), one half content |
+| `closing-slide` | Final slide with CTA, contact info, links, optional QR code |
 
 ## Effects and advanced features
 
@@ -244,6 +251,36 @@ Claude will also create basement slides on its own when content warrants a deepe
 ### Previewing
 
 Say "spin it up" and Claude will start a local server at `http://localhost:8765`.
+
+## Presenter tips
+
+These Reveal.js features work out of the box on every generated deck:
+
+| Shortcut | What it does |
+|----------|-------------|
+| `S` | Open **speaker view** — shows your notes, a timer, and the next slide in a separate window |
+| `Esc` | **Overview mode** — see all slides at once, click to jump to any slide |
+| `B` or `.` | **Blackout** — blank the screen (useful during Q&A or discussion) |
+| `Alt + click` | **Zoom** into any element on a slide |
+| `?` | Show all keyboard shortcuts |
+| Arrow keys | Navigate (right = next, left = prev, down = basement, up = back up) |
+
+### PDF export
+
+Add `?print-pdf` to the URL and print from the browser:
+
+```
+http://localhost:8765/?print-pdf
+```
+
+Use Chrome/Chromium for best results. Set to landscape, no margins, and enable background graphics.
+
+### Sharing without a server
+
+Since decks are self-contained `index.html` files, you can:
+- Drop the file into any static hosting (GitHub Pages, Netlify, S3)
+- Email the HTML file directly — it opens in any browser
+- Commit it to a repo and share the raw URL
 
 ## Decks are standalone
 
