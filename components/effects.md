@@ -172,6 +172,25 @@ Embed a live webpage as the slide background. Interactive by default.
 **User triggers:** "embed this URL as an iframe slide", "make {010} a live
 iframe of this page".
 
+**Important limitation:** Most websites block iframe embedding via
+`X-Frame-Options` or `Content-Security-Policy` headers. **Iframe slides
+are primarily useful for localhost demos** — your own dev server, ttyd
+terminals, local apps, or tools running on `localhost`. Very few
+production websites allow framing.
+
+**What works in iframes:**
+- `localhost` services (ttyd, dev servers, local apps)
+- Sites you control (where you can set permissive headers)
+- Embeddable widgets (CodePen, JSFiddle, Google Maps, YouTube)
+
+**What doesn't work (blocked by most sites):**
+- Most production websites (Drupal.org, GitHub, etc.)
+- SaaS apps, government sites, banks, social media
+
+**If the user requests an iframe for a site that blocks it:** warn them
+and suggest alternatives — a full-bleed screenshot as a background image
+with a clickable link overlay, or switch to a localhost demo.
+
 ### Parallax background
 
 Subtle depth effect on a repeating background image as slides change.
