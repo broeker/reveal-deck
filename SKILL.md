@@ -53,7 +53,12 @@ anything already clear.
 Good questions:
 - Audience and their familiarity with the topic?
 - Preferred theme? (default: `electric-dark`)
-- Approximate scope — how many slides / how long? (or let Claude decide)
+- **Target length and depth** — this shapes everything:
+  - Lightning talk (5-10 min) → tight, punchy, 8-12 slides, no basement slides
+  - Standard talk (15-25 min) → balanced depth, 15-25 slides, selective basements
+  - Deep dive (30-60 min) → comprehensive, 25-40+ slides, basements for extras
+  - If the user doesn't have a preference, estimate from the outline length
+    (Path A) or topic breadth (Path B) and propose a target
 - Any specific points, examples, or stories to include?
 - Any slides needing special treatment (heavy visuals, specific layout)?
 - Tone — technical deep-dive, casual overview, persuasive pitch?
