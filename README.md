@@ -152,6 +152,54 @@ Slide-level patterns that combine components into complete slide structures.
 | `comparison-slide` | Side-by-side comparison layout |
 | `resources-slide` | Categorized links for references/further reading |
 
+## Effects and advanced features
+
+Reveal.js has powerful features beyond static slides. Some are used automatically; others are available on request.
+
+### Automatic (Claude decides)
+
+These are applied where they clearly help — you don't need to ask:
+
+| Effect | What it does | When Claude uses it |
+|--------|-------------|---------------------|
+| **Fragments** | Reveals list items one at a time on click | Dense slides with 5+ bullets |
+| **Auto-animate** | Smooth morph between two related slides | Slides that build on each other (growing code, expanding lists) |
+| **r-fit-text** | Auto-scales text to fill slide width | Section dividers and single-phrase impact slides |
+
+### On request
+
+Ask for these in your outline notes or during iteration:
+
+| Effect | How to request | Example |
+|--------|---------------|---------|
+| **Image background** | "fullscreen image on {005}" | Full-bleed photo behind slide content |
+| **GIF background** | "fullscreen gif on {007}" | Animated GIF as slide background |
+| **Video background** | "video background on {003}" | Auto-playing muted video behind content |
+| **iframe background** | "embed this URL as an iframe on {010}" | Live webpage as the slide |
+| **Parallax** | "add parallax scrolling" | Subtle depth effect as slides change (global) |
+| **Transition override** | "zoom into {008}" or "hard cut to {012}" | Per-slide transition style |
+| **Background transition** | "zoom the background on {006}" | Animate just the background independently |
+
+**Transitions available:** `fade` (default), `slide`, `convex`, `concave`, `zoom`, `none`
+
+**Fragment styles available:** `fade-in` (default), `fade-up`, `fade-down`, `fade-left`, `fade-right`, `highlight-current-blue`, `semi-fade-out`
+
+You can also note these inline in your outline:
+
+```markdown
+## The Big Reveal
+
+[fullscreen gif: https://example.com/mind-blown.gif]
+
+This changes everything.
+
+## Live Demo
+
+[iframe: https://my-app.example.com]
+```
+
+For the full list of Reveal.js features, see the [official demo](https://revealjs.com/) and [documentation](https://revealjs.com/markup/).
+
 ## Tips for good results
 
 ### Write a good outline
