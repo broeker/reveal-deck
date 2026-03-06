@@ -151,6 +151,7 @@ Slide-level patterns that combine components into complete slide structures.
 | `code-slide` | Full-width code-focused slide |
 | `comparison-slide` | Side-by-side comparison layout |
 | `resources-slide` | Categorized links for references/further reading |
+| `basement-slide` | Vertical (down) slides for deeper dives beneath a main slide |
 
 ## Effects and advanced features
 
@@ -204,10 +205,26 @@ For the full list of Reveal.js features, see the [official demo](https://revealj
 
 ### Write a good outline
 
-- **One heading per slide idea** — Claude will split or merge as needed
+- **One `##` heading per slide idea** — Claude will split or merge as needed
+- **Use `###` for deeper dives** — sub-headings become basement (vertical) slides below their parent
 - **Include raw notes** — don't worry about length; too much is better than too little
 - **Note special requests inline** — "show this as a comparison", "include a diagram here"
 - **Mark what matters** — bold or emphasize key points you don't want lost in condensing
+
+```markdown
+## Main Topic              <-- horizontal slide
+Core points here.
+
+### Detailed Example        <-- basement slide (navigate down)
+Extended walkthrough...
+
+### Reference Commands      <-- second basement slide
+More detail...
+
+## Next Topic              <-- back to horizontal flow
+```
+
+Claude will also create basement slides on its own when content warrants a deeper dive but would slow the main flow. Basement slides use letter suffixes: `{003a}`, `{003b}`.
 
 ### During the interview
 
@@ -222,6 +239,7 @@ For the full list of Reveal.js features, see the [official demo](https://revealj
 - **Request component swaps** — "switch {007} from bullets to a `flow` diagram"
 - **Ask for additions** — "add a `callout` to {004} with the key takeaway"
 - **Request effects** — "fullscreen gif on {005}", "auto-animate {003} to {004}", "add fragments to {006}", "embed this URL as an iframe on {010}"
+- **Move slides vertically** — "move {005} to a basement slide under {004}" or "promote {004a} to the main flow"
 
 ### Previewing
 

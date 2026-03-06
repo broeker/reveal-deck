@@ -111,17 +111,24 @@ Every piece is referenced by its kebab-case name:
 `key-item`, `resource-list`, `effects`
 
 **Layouts:** `title-slide`, `section-divider`, `content-slide`, `code-slide`,
-`comparison-slide`, `resources-slide`
+`comparison-slide`, `resources-slide`, `basement-slide`
 
 ### 5. Content strategy
 
 **Condensing rules — use your judgment on each slide:**
 - **Too long for one slide?** Tighten the language first. If still too dense,
-  break it across 2-3 slides. Don't lose key information — condense, don't cut.
+  either break it across 2-3 horizontal slides, or move the deep-dive portion
+  to a `basement-slide` below the main slide. Use basement slides when the
+  detail is supporting/optional rather than essential to the main flow.
 - **Too sparse?** Flesh it out with relevant detail. Don't pad — add substance.
 - **Topic breaks** — when the subject shifts, insert a `section-divider` layout.
 - **Missing topics** — if there's an obvious gap the outline should cover, add
   a slide for it. Flag these with a speaker note: `<!-- ADDED: not in outline -->`
+- **Basement slides** — in the outline, `###` sub-headings under a `##` become
+  vertical (basement) slides. Claude should also create basement slides on its
+  own when content warrants a deeper dive but would slow the main horizontal
+  flow — examples, walkthroughs, reference lists, optional detail. See the
+  `basement-slide` layout for structure and slug conventions (`{003a}`, `{003b}`).
 - **Display choices** — pick the right component for the content. Don't default
   to bullet lists when a visual component would be stronger:
   - Bullet lists for sequences and simple enumerations
@@ -173,6 +180,7 @@ Keep each note to 2-4 short sentences. The presenter should glance, not read.
 **Slug numbering — `{NNN}` format:**
 Every content slide (excluding the title slide) gets a zero-padded sequential
 slug: `{001}`, `{002}`, etc. Use as the `slide-tag` content and `data-id`.
+Basement slides append a letter to their parent: `{003a}`, `{003b}`, etc.
 If source content has pre-assigned slugs, honor them.
 
 ### 6. HTML output
@@ -236,6 +244,8 @@ After the first draft, expect iteration. Common requests:
 - **"Tighten {003}"** — reduce text, increase visual contrast
 - **"Split {007}"** — duplicate section structure, split content
 - **"Drop {011}"** — remove the slide, renumber subsequent slugs
+- **"Move {005} to a basement slide under {004}"** — convert to vertical slide
+- **"Promote {004a} to the main flow"** — move basement slide to horizontal
 - **"Add a section divider before {005}"** — insert and renumber
 - **"Switch the flow on {007} to a step-list"** — swap component
 - **"Change the theme"** — update CSS variables and fonts; layout stays
