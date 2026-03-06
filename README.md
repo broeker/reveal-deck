@@ -278,6 +278,62 @@ This changes everything.
 
 For the full list of Reveal.js features, see the [official demo](https://revealjs.com/) and [documentation](https://revealjs.com/markup/).
 
+## Images and visuals
+
+### SVG diagrams (auto-generated)
+
+Claude proactively generates inline SVG graphics when a concept benefits from a visual. You don't need to ask — but you can request them explicitly in your outline:
+
+```markdown
+## Deploy Pipeline
+[diagram: flow from commit to production]
+
+## Drupal Architecture
+[diagram: layered stack — theme, logic, data, database]
+
+## Test Coverage
+[chart: donut showing 70/20/10 split]
+```
+
+Available diagram styles: architecture stacks, network/node diagrams, bar charts, donut charts, funnels, Venn diagrams, gauges, shield/security icons, gear/config icons, and abstract decorative patterns. All rendered in theme colors.
+
+### Photos and background images
+
+Add photos to slides using any of these methods:
+
+```markdown
+## The Team
+[background image: dark office with code on screens]
+
+## Our Stack
+[image: screenshot of the Drupal admin]
+```
+
+Or during iteration: "add a background image to {005}".
+
+**Image sources:**
+- **Unsplash** — Claude uses direct Unsplash URLs for free stock photos. No account or API key needed, no attribution required.
+- **Local files** — place images in an `images/` folder in your deck directory and reference as `./images/photo.jpg`
+- **URLs** — any direct image URL works
+
+**Background images** appear behind slide content at low opacity for readability. **Inline images** appear alongside text, typically in a 2-column layout.
+
+**Screenshots** get a browser-frame treatment (macOS-style chrome dots and URL bar) to look polished — recommended over iframes for external websites that block embedding.
+
+### Iframe limitations
+
+Most production websites block iframe embedding via security headers. **Iframe slides are primarily useful for localhost demos** — your dev server, ttyd terminals, or local apps. For external sites, use a screenshot with a link instead.
+
+## Motif system
+
+Each theme defines a **motif** — a repeating visual icon that appears on every slide as a brand signature. For `electric-dark`, the motif is the lightning bolt.
+
+- A large, ghosted motif appears in the background of every content slide
+- Smaller motifs appear inline with some headings
+- Colors alternate between the theme's accent colors (cyan and amber)
+
+The motif is automatic — Claude places it on every slide during generation. You can override the icon during the interview ("use a rocket instead of the bolt").
+
 ## Tips for good results
 
 ### Write a good outline
@@ -320,8 +376,10 @@ Claude will also create basement slides on its own when content warrants a deepe
 - **Use slugs** — `{003}` is faster and more precise than "the third slide"
 - **Be direct** — "tighten {003}" works better than "can you maybe make slide 3 a bit shorter?"
 - **Request component swaps** — "switch {007} from bullets to a `flow` diagram"
+- **Make it more visual** — "replace the bullets on {004} with an `icon-grid`", "add a diagram to {005}", "convert {008} to a `step-list`"
 - **Ask for additions** — "add a `callout` to {004} with the key takeaway"
 - **Request effects** — "fullscreen gif on {005}", "auto-animate {003} to {004}", "add fragments to {006}", "embed this URL as an iframe on {010}"
+- **Add images** — "add a background photo to {003}", "add a screenshot of the Drupal admin to {007}"
 - **Move slides vertically** — "move {005} to a basement slide under {004}" or "promote {004a} to the main flow"
 
 ### Previewing
