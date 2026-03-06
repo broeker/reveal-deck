@@ -94,14 +94,14 @@ if grep -q 'localhost:768[0-9]' "$DECK" 2>/dev/null; then
     if [ "$TTYD_INSTALLED" -eq 1 ]; then
       yellow "  Start ttyd before presenting:"
       for P in $PORTS; do
-        echo "    ttyd -p $P bash &"
+        echo "    ttyd -W -p $P bash &"
       done
       echo ""
       echo "  Or open to a specific directory:"
-      echo "    ttyd -p 7681 bash -c \"cd /path/to/project && exec bash\" &"
+      echo "    ttyd -W -p 7681 bash -c \"cd /path/to/project && exec bash\" &"
       echo ""
       echo "  Or open a file:"
-      echo "    ttyd -p 7681 vim /path/to/file &"
+      echo "    ttyd -W -p 7681 vim /path/to/file &"
     fi
     echo ""
     read -p "  Continue without terminal? [y/N] " -n 1 -r

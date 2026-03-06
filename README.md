@@ -353,16 +353,16 @@ brew install ttyd
 **Start before presenting:**
 ```bash
 # Blank terminal
-ttyd -p 7681 bash &
+ttyd -W -p 7681 bash &
 
 # Open to a specific directory
-ttyd -p 7681 bash -c "cd ~/projects/mysite && exec bash" &
+ttyd -W -p 7681 bash -c "cd ~/projects/mysite && exec bash" &
 
 # Open a file in an editor
-ttyd -p 7681 vim /path/to/settings.php &
+ttyd -W -p 7681 vim /path/to/settings.php &
 
 # Run a command, then stay in the shell
-ttyd -p 7681 bash -c "drush status; exec bash" &
+ttyd -W -p 7681 bash -c "drush status; exec bash" &
 ```
 
 Use different ports for different terminal slides. Kill all after presenting: `pkill ttyd`

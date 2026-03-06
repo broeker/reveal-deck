@@ -22,21 +22,26 @@ sudo apt install ttyd
 
 | Mode | Command | Use case |
 |------|---------|----------|
-| Blank shell | `ttyd -p 7681 bash` | Live demo, ad hoc commands |
-| Specific directory | `ttyd -p 7681 bash -c "cd /path/to/project && exec bash"` | Project walkthrough |
-| Open a file | `ttyd -p 7681 vim /path/to/file.php` | Code review, config inspection |
-| View a file | `ttyd -p 7681 less /path/to/file.json` | Read-only file display |
-| Run then stay open | `ttyd -p 7681 bash -c "drush status; exec bash"` | Show output, then continue |
+| Blank shell | `ttyd -W -p 7681 bash` | Live demo, ad hoc commands |
+| Specific directory | `ttyd -W -p 7681 bash -c "cd /path/to/project && exec bash"` | Project walkthrough |
+| Open a file | `ttyd -W -p 7681 vim /path/to/file.php` | Code review, config inspection |
+| View a file | `ttyd -W -p 7681 less /path/to/file.json` | Read-only file display |
+| Run then stay open | `ttyd -W -p 7681 bash -c "drush status; exec bash"` | Show output, then continue |
 
 ### Multiple terminals
 
 Use different ports for different slides:
 
 ```bash
-ttyd -p 7681 bash &                                    # slide {005}
-ttyd -p 7682 vim /app/web/sites/default/settings.php & # slide {008}
-ttyd -p 7683 bash -c "cd /app && exec bash" &          # slide {012}
+ttyd -W -p 7681 bash &                                    # slide {005}
+ttyd -W -p 7682 vim /app/web/sites/default/settings.php & # slide {008}
+ttyd -W -p 7683 bash -c "cd /app && exec bash" &          # slide {012}
 ```
+
+### Important: the `-W` flag
+
+ttyd is **read-only by default**. The `-W` (writable) flag is required for
+the presenter to type in the terminal. Always include it.
 
 ### Presenter tips
 
@@ -145,6 +150,7 @@ ttyd -p 7683 bash -c "cd /app && exec bash" &          # slide {012}
   border: 1px solid var(--border);
   z-index: 10;
   max-width: 40%;
+  pointer-events: none;
 }
 
 .terminal-overlay h3 {
