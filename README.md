@@ -10,6 +10,14 @@ A Claude Code skill for building production-quality Reveal.js slide decks. Works
 
 This symlinks the skill into `~/.claude/skills/`. The slash command is `/slides`.
 
+**Optional but recommended:** The `frontend-design` skill improves Claude's visual decisions when customizing themes or handling design requests:
+
+```
+/install-skill https://github.com/anthropics/skills frontend-design
+```
+
+The `/slides` skill works fine without it — all theme and component CSS is self-contained. But if you plan to create custom themes or make significant design changes, `frontend-design` helps.
+
 ## What is Reveal.js?
 
 [Reveal.js](https://revealjs.com/) is an open-source HTML presentation framework. Instead of PowerPoint or Google Slides, your deck is a single `index.html` file that runs in any web browser. This skill generates that file for you — you don't need to know HTML or CSS.

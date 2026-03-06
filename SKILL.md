@@ -14,7 +14,15 @@ description: >
 Builds production-quality Reveal.js slide decks using a library of named
 themes, components, and layouts. Supports two entry points: building from a
 markdown outline, or generating a deck from scratch given just a topic/prompt.
-Always pairs with the `frontend-design` skill for aesthetic direction.
+
+**Design dependency:** This skill works best with the `frontend-design` skill
+installed, which helps Claude make stronger visual decisions when customizing
+themes, choosing colors, or handling ad hoc design requests. However, the
+skill is fully self-contained — the theme files and component CSS provide all
+the design guidance needed for standard builds. If the user asks for significant
+design customization and `frontend-design` is not available, note that
+installing it would improve results:
+`/install-skill https://github.com/anthropics/skills frontend-design`
 
 ## Workflow
 
