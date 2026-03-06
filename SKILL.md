@@ -328,16 +328,31 @@ After generating all slides, update the title slide with:
 
 Recalculate after every editing pass.
 
-### 9. Serving and previewing
+### 9. Serve script
+
+After generating `index.html`, copy the launch script into the deck directory:
+
+```bash
+cp /path/to/skill/templates/serve.sh /path/to/deck/serve.sh
+chmod +x /path/to/deck/serve.sh
+```
+
+This script handles:
+- Starting a local server (`python3 -m http.server`)
+- Checking if the port is available
+- Detecting terminal-embed slides and warning if ttyd isn't running
+- Cross-platform (Linux and macOS)
 
 When the user says "spin it up" or asks to preview:
 
 ```bash
-cd /path/to/deck && python3 -m http.server 8765 &
+cd /path/to/deck && ./serve.sh &
 ```
 
 Confirm with `curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/`
 and report: **http://localhost:8765**
+
+If the user runs it themselves, the script provides all the guidance needed.
 
 ### 10. Iteration
 

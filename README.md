@@ -321,7 +321,51 @@ Claude will also create basement slides on its own when content warrants a deepe
 
 ### Previewing
 
-Say "spin it up" and Claude will start a local server at `http://localhost:8765`.
+Every deck includes a `serve.sh` launch script. From your deck directory:
+
+```bash
+./serve.sh         # starts server on port 8765
+./serve.sh 8766    # or pick a different port
+```
+
+The script runs pre-flight checks before starting:
+- Verifies `index.html` exists
+- Checks if the port is available
+- If the deck has live terminal slides, checks that [ttyd](https://github.com/tsl0922/ttyd) is installed and running — and tells you exactly what to do if it isn't
+
+You can also say "spin it up" and Claude will run it for you.
+
+**Requirements:** Python 3 (pre-installed on macOS and Linux). No other dependencies.
+
+### Live terminal slides
+
+Some decks embed a live terminal using `ttyd`. If your deck has terminal slides, `serve.sh` will warn you if ttyd isn't running.
+
+**Install ttyd:**
+```bash
+# Ubuntu/Debian
+sudo apt install ttyd
+
+# macOS
+brew install ttyd
+```
+
+**Start before presenting:**
+```bash
+# Blank terminal
+ttyd -p 7681 bash &
+
+# Open to a specific directory
+ttyd -p 7681 bash -c "cd ~/projects/mysite && exec bash" &
+
+# Open a file in an editor
+ttyd -p 7681 vim /path/to/settings.php &
+
+# Run a command, then stay in the shell
+ttyd -p 7681 bash -c "drush status; exec bash" &
+```
+
+Use different ports for different terminal slides. Kill all after presenting: `pkill ttyd`
 
 ## Exporting and sharing
 
